@@ -1,24 +1,30 @@
-Spotify & YouTube Charts Extractor
+```markdown
+# Spotify & YouTube Charts Extractor
 
 Este proyecto permite extraer listas de canciones con artistas desde los JSON que usan las páginas de:
 
-YouTube Charts
+- YouTube Charts
+- Spotify Charts
+- Playlists de open.spotify.com
 
-Spotify Charts
+y generar un archivo `.txt` con el formato:
 
-Playlists de open.spotify.com
-
-y generar un archivo .txt con el formato:
-
+```
 Canción - Artista1, Artista2, ...
+```
 
-🚀 Requisitos
+---
 
-Python 3.8 o superior
+## 🚀 Requisitos
 
-Paquetes estándar de Python (json, os) → ya vienen incluidos, no necesitas instalar nada extra
+- Python 3.8 o superior
+- Paquetes estándar de Python (`json`, `os`) → ya vienen incluidos, no necesitas instalar nada extra
 
-📂 Estructura del proyecto
+---
+
+## 📂 Estructura del proyecto
+
+```
 .
 ├── chartsJson/                 # Aquí van los JSON descargados desde el navegador
 │   ├── chartsSp.json           # Spotify Charts
@@ -38,67 +44,56 @@ Paquetes estándar de Python (json, os) → ya vienen incluidos, no necesitas in
 │
 ├── SpotifyLists.ahk            # Script AutoHotkey (para manejo en Spotify)
 └── README.md                   # Este archivo
+```
 
-📝 Pasos para obtener los JSON
-1. YouTube Charts
+---
 
-Ir a YouTube Charts
-.
+## 📝 Pasos para obtener los JSON
 
-Abrir el Inspector del navegador (F12).
+### 1. YouTube Charts
 
-Ir a la pestaña Network.
+- Ir a [YouTube Charts](https://charts.youtube.com)
+- Abrir el Inspector del navegador (F12).
+- Ir a la pestaña **Network**.
+- Filtrar por `browse`.
+- Abrir la petición → pestaña **Response**.
+- Seleccionar todo el contenido (`Ctrl + A`) y copiarlo.
+- Vaciar el archivo `chartsYt.json` y pegar el contenido copiado.
 
-Filtrar por browse.
+### 2. Spotify Charts
 
-Abrir la petición → pestaña Response.
+- Ir a [Spotify Charts](https://spotifycharts.com)
+- Abrir el Inspector del navegador (F12).
+- Ir a la pestaña **Network**.
+- Filtrar por `charts`.
+- Abrir la petición → pestaña **Response**.
+- Copiar todo el contenido.
+- Vaciar el archivo `chartsSp.json` y pegar el contenido.
 
-Seleccionar todo el contenido (Ctrl + A) y copiarlo.
+### 3. Playlists en open.spotify.com
 
-Vaciar el archivo chartsYt.json y pegar el contenido copiado.
+- Abrir la playlist en [open.spotify.com](https://open.spotify.com)
+- Abrir el Inspector del navegador (F12).
+- Ir a la pestaña **Network**.
+- Filtrar por `query`.
+- Ubicar las 2 peticiones grandes que en la respuesta empiezan con:
 
-2. Spotify Charts
-
-Ir a Spotify Charts
-.
-
-Abrir el Inspector del navegador (F12).
-
-Ir a la pestaña Network.
-
-Filtrar por charts.
-
-Abrir la petición → pestaña Response.
-
-Copiar todo el contenido.
-
-Vaciar el archivo chartsSp.json y pegar el contenido.
-
-3. Playlists en open.spotify.com
-
-Abrir la playlist en open.spotify.com
-.
-
-Abrir el Inspector del navegador (F12).
-
-Ir a la pestaña Network.
-
-Filtrar por query.
-
-Ubicar las 2 peticiones grandes que en la respuesta empiezan con:
-
+```
 "data": {
   "playlistV2": {
     "__typename": "Playlist",
     ...
+```
 
+- Guardar la primera en `openSp1.json` y la segunda en `openSp2.json`.
 
-Guardar la primera en openSp1.json y la segunda en openSp2.json.
+---
 
-▶️ Ejecución
+## ▶️ Ejecución
 
 Ejecutar los siguientes comandos desde la raíz del proyecto:
 
+```
 # Procesar YouTube Charts
 python getSongList/getSongArtistChartYt.py
 
@@ -107,21 +102,26 @@ python getSongList/getSongArtistChartSp.py
 
 # Procesar open.spotify.com playlists
 python getSongList/getSongArtistOpenSp.py
+```
 
+Los resultados aparecerán en la carpeta `outputs/`:
 
-Los resultados aparecerán en la carpeta outputs/:
+- `salidaChartYt.txt`
+- `salidaChartSp.txt`
+- `salidaOpenSp.txt`
 
-salidaChartYt.txt
+---
 
-salidaChartSp.txt
+## ✅ Resultado esperado
 
-salidaOpenSp.txt
+Formato de salida en los `.txt`:
 
-✅ Resultado esperado
-
-Formato de salida en los .txt:
-
+```
 Put On - Jeezy, Kanye West
 Golden - HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast
 back to friends - sombr
 ...
+```
+```
+
+Este formato usa bloques de código para diferenciar segmentos de código, comandos, y estructura. Los títulos usan el símbolo `#` para encabezados. Así los símbolos se mantienen legibles y es fácil copiar todo sin que el frontend lo interprete mal.
