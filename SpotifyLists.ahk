@@ -220,6 +220,8 @@ F2:: {
         Sleep 200
         Send "^v"
         Sleep 200
+        Send "^a"
+        Sleep 200
         Send "^c"
         Sleep 300
 
