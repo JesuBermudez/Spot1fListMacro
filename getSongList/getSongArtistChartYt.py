@@ -3,7 +3,7 @@ import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 json_path = os.path.join(base_dir, "..", "chartsJson", "chartsYt.json")
-output_file = os.path.join(base_dir, "..", "output", "salidaChartSp.txt")
+output_file = os.path.join(base_dir, "..", "outputs", "salidaChartSp.txt")
 
 with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)

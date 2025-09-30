@@ -2,12 +2,12 @@
 ; Presiona F2 para ejecutar la secuencia
 F2:: {
     ; --- Configuración ---
-    vsX := 165, vsY := 760
-    vsLineX := 386, vsLineY := 117
+    vsX := 83, vsY := 744
+    vsLineX := 44, vsLineY := 121
     vsLinesGap := 20
 
-    chromeX := 203, chromeY := 753
-    chromeGap := 38
+    chromeX := 112, chromeY := 743
+    chromeGap := 33
 
     spotifySearchX := 715, spotifySearchY := 165
     firstResultX := 560, firstResultY := 300
