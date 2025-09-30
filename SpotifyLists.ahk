@@ -9,26 +9,23 @@ F2:: {
     chromeX := 203, chromeY := 753
     chromeGap := 38
 
-    spotifySearchX := 715, spotifySearchY := 165
-    firstResultX := 560, firstResultY := 300
-    mouseMovePlaylistX := 195
+    spotifySearchX := 708, spotifySearchY := 165
+    firstResultX := 553, firstResultY := 300
+    mouseMovePlaylistX := 188
 
-    songLastX := 325, songLastY := 640
+    songLastX := 318, songLastY := 640
     songsGap := 37
-    playlistDropX := 65, playlistDropY := 292
-    descriptionX := 666, descriptionY := 415
-    savePlaylistX := 800, savePlaylistY := 504
+    playlistDropX := 58, playlistDropY := 292
+    descriptionX := 659, descriptionY := 415
+    savePlaylistX := 793, savePlaylistY := 504
     playPlaylistY := 400
 
-    newTabX := 301, newTabY := 21
-    googleSearchX := 161, googleSearchY := 63
-    imagesTabX := 340, imagesTabY := 251
-    firstImageX := 130, firstImageY := 455
-    imageClickX := 1080, imageClickY := 421
+    newTabX := 294, newTabY := 21
+    googleSearchX := 154, googleSearchY := 63
+    imagesTabX := 333, imagesTabY := 251
+    firstImageX := 123, firstImageY := 455
+    imageClickX := 1073, imageClickY := 421
     saveImageX := -15, saveImageY := 159
-
-    emptyClickX := 1050, emptyClickY := 195
-    downloadFirstImageX := 240, downloadFirstImageY := 165
 
     songE1 := "Echoes of Us Jaye"
     songE2 := "Infinite Pulse Jaye"
