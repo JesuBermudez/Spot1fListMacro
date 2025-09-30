@@ -11,9 +11,7 @@ F2:: {
 
     spotifySearchX := 720, spotifySearchY := 171
     firstResultX := 650, firstResultY := 375
-    addPlaylistX := 715, addPlaylistY := 410
     mouseMovePlaylistX := 325
-    playlistX := 1030, playlistY := 450
 
     songLastX := 465, songLastY := 815
     songsGap := 57
@@ -39,8 +37,12 @@ F2:: {
         Click chromeX + (i * chromeGap), chromeY
         Sleep 300
 
+        ; --- clic en Musica si sale ---
+        Click songLastX + 65, playlistDropY - 140
+        Sleep 1500
+
         ; --- Reproducir la primera lista en inicio ---
-        MouseMove songLastX + 100, playlistY + 10
+        MouseMove songLastX + 100, playlistDropY + 85
         Sleep 200
         Click "Down"
         Click "Up"
@@ -57,19 +59,19 @@ F2:: {
         ; --- Primer resultado y agregar a playlist ---
         Click firstResultX, firstResultY, "Right"
         Sleep 300
-        Click addPlaylistX, addPlaylistY
+        Click firstResultX + 25, firstResultY + 35
         Sleep 300
-        MouseMove addPlaylistX + mouseMovePlaylistX, playlistY
+        MouseMove firstResultX + 25 + mouseMovePlaylistX, firstResultY + 35
         Sleep 200
-        Click playlistX, playlistY
+        Click firstResultX + 25 + mouseMovePlaylistX, firstResultY + 35 + 40
         Sleep 500
 
         ; --- Clic en artista ---
         Click firstResultX, firstResultY, "Right"
         Sleep 300
-        Click addPlaylistX, addPlaylistY + 165
+        Click firstResultX + 25, firstResultY + 35 + 155
         Sleep 300
-        Click addPlaylistX + 250, addPlaylistY + 165
+        Click firstResultX + 25 + mouseMovePlaylistX, firstResultY + 35 + 155
         Sleep 3500
 
         ; --- clic en albums, album de artista ---
