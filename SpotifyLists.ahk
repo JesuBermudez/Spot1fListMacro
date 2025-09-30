@@ -25,7 +25,7 @@ F2:: {
     emptyClickX := 1250, emptyClickY := 270
 
     Loop 10 {
-        i := A_Index - 1
+        i := A_Index
 
         ; --- Visual Studio: copiar línea ---
         Click vsX, vsY
@@ -38,6 +38,10 @@ F2:: {
         ; --- Chrome ventana i ---
         Click chromeX + (i * chromeGap), chromeY
         Sleep 500
+
+        ; --- Reproducir la primera lista en inicio ---
+        Click songLastX + 30, playlistY + 10
+        Sleep 1000
 
         ; --- Buscar en Spotify ---
         Click spotifySearchX, spotifySearchY
@@ -60,9 +64,9 @@ F2:: {
         ; --- Clic en artista ---
         Click firstResultX, firstResultY, "Right"
         Sleep 300
-        Click addPlaylistX, addPlaylistY + 107
+        Click addPlaylistX, addPlaylistY + 165
         Sleep 300
-        Click addPlaylistX + 250, addPlaylistY + 107
+        Click addPlaylistX + 250, addPlaylistY + 165
         Sleep 3500
 
         ; --- clic en albums, album de artista ---
@@ -170,11 +174,11 @@ F2:: {
         Send " filetype:jpg"
         Sleep 100
         Send "{Enter}"
-        Sleep 9000
+        Sleep 4000
 
         ; --- click en imágenes y en 1ra imagen ---
         Click imagesTabX, imagesTabY
-        Sleep 3000
+        Sleep 7000
         Click 148, 455
         Sleep 2000
 
@@ -246,9 +250,10 @@ F2:: {
         Sleep 300
 
         ; --- guardar y reproducir playlist ---
-        Click 1011, 700
+        Click 1011, 695
         Sleep 3000
-        Click 452, 532
+        Click 452, 530
+        Sleep 200
 
         ; --- clic en nombre de playlist ---
         Click firstResultX + 50, firstResultY
@@ -264,5 +269,6 @@ F2:: {
         Send "{Enter}"
         ; --- guardara ---
         Click 1011, 700
+        Sleep 200
     }
 }
