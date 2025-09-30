@@ -1,0 +1,123 @@
+# Spotify & YouTube Charts Extractor
+
+Este proyecto permite **extraer listas de canciones con artistas** desde los JSON que usan las páginas de:
+
+- **YouTube Charts**
+- **Spotify Charts**
+- **Playlists de open.spotify.com**
+
+y generar un archivo `.txt` con el formato:
+
+Canción - Artista1, Artista2, ...
+
+yaml
+Copiar código
+
+---
+
+## 🚀 Requisitos
+
+- Python 3.8 o superior
+- Paquetes estándar de Python (`json`, `os`) → ya vienen incluidos, **no necesitas instalar nada extra**
+
+---
+
+## 📂 Estructura del proyecto
+
+.
+├── chartsJson/ # Aquí van los JSON descargados desde el navegador
+│ ├── chartsSp.json # Spotify Charts
+│ ├── chartsYt.json # YouTube Charts
+│ ├── openSp1.json # Primera mitad de playlist de open.spotify.com
+│ └── openSp2.json # Segunda mitad de playlist de open.spotify.com
+│
+├── getSongList/ # Scripts de Python
+│ ├── getSongArtistChartSp.py # Procesa chartsSp.json
+│ ├── getSongArtistChartYt.py # Procesa chartsYt.json
+│ └── getSongArtistOpenSp.py # Procesa openSp1.json + openSp2.json
+│
+├── outputs/ # Resultados de los scripts
+│ ├── salidaChartSp.txt
+│ ├── salidaChartYt.txt
+│ └── salidaOpenSp.txt
+│
+├── SpotifyLists.ahk # Script AutoHotkey (para manejo en Spotify)
+└── README.md # Este archivo
+
+markdown
+Copiar código
+
+---
+
+## 📝 Pasos para obtener los JSON
+
+### 1. YouTube Charts
+
+1. Ir a [YouTube Charts](https://charts.youtube.com/).
+2. Abrir el **Inspector del navegador** (`F12`).
+3. Ir a la pestaña **Network**.
+4. Filtrar por **browse**.
+5. Abrir la petición → pestaña **Response**.
+6. Seleccionar todo el contenido (`Ctrl + A`) y copiarlo.
+7. Vaciar el archivo `chartsYt.json` y pegar el contenido copiado.
+
+### 2. Spotify Charts
+
+1. Ir a [Spotify Charts](https://spotifycharts.com/).
+2. Abrir el **Inspector del navegador** (`F12`).
+3. Ir a la pestaña **Network**.
+4. Filtrar por **charts**.
+5. Abrir la petición → pestaña **Response**.
+6. Copiar todo el contenido.
+7. Vaciar el archivo `chartsSp.json` y pegar el contenido.
+
+### 3. Playlists en open.spotify.com
+
+1. Abrir la playlist en [open.spotify.com](https://open.spotify.com).
+2. Abrir el **Inspector del navegador** (`F12`).
+3. Ir a la pestaña **Network**.
+4. Filtrar por **query**.
+5. Ubicar las **2 peticiones grandes** que en la respuesta empiezan con:
+
+   ```json
+   "data": {
+     "playlistV2": {
+       "__typename": "Playlist",
+       ...
+   Guardar la primera en openSp1.json y la segunda en openSp2.json.
+   ```
+
+▶️ Ejecución
+Ejecutar los siguientes comandos desde la raíz del proyecto:
+
+bash
+Copiar código
+
+# Procesar YouTube Charts
+
+python getSongList/getSongArtistChartYt.py
+
+# Procesar Spotify Charts
+
+python getSongList/getSongArtistChartSp.py
+
+# Procesar open.spotify.com playlists
+
+python getSongList/getSongArtistOpenSp.py
+Los resultados aparecerán en la carpeta outputs/:
+
+salidaChartYt.txt
+
+salidaChartSp.txt
+
+salidaOpenSp.txt
+
+✅ Resultado esperado
+Formato de salida en los .txt:
+
+mathematica
+Copiar código
+Put On - Jeezy, Kanye West
+Golden - HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast
+back to friends - sombr
+...

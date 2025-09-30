@@ -30,6 +30,9 @@ F2:: {
     emptyClickX := 1050, emptyClickY := 195
     downloadFirstImageX := 240, downloadFirstImageY := 165
 
+    songE1 := "Echoes of Us Jaye"
+    songE2 := "Infinite Pulse Jaye"
+
     Loop 10 {
         i := A_Index - 1
 
@@ -117,7 +120,7 @@ F2:: {
         ; --- buscar canción específica 1 ---
         Click spotifySearchX, spotifySearchY
         Sleep 200
-        Send "Mystic Jaye"
+        Send songE1
         Send "{Enter}"
         Sleep 3500
 
@@ -138,7 +141,7 @@ F2:: {
         Sleep 200
         Send "^a"
         Sleep 200
-        Send "Deepl Jaye"
+        Send songE2
         Send "{Enter}"
         Sleep 3500
 
