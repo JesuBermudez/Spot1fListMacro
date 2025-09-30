@@ -2,25 +2,33 @@
 ; Presiona F2 para ejecutar la secuencia
 F2:: {
     ; --- Configuración ---
-    vsX := 165, vsY := 1035
-    vsLineX := 260, vsLineY := 100
+    vsX := 165, vsY := 760
+    vsLineX := 386, vsLineY := 117
     vsLinesGap := 20
 
-    chromeX := 203, chromeY := 1035
-    chromeGap := 37
+    chromeX := 203, chromeY := 753
+    chromeGap := 38
 
-    spotifySearchX := 720, spotifySearchY := 171
-    firstResultX := 650, firstResultY := 375
-    mouseMovePlaylistX := 325
+    spotifySearchX := 715, spotifySearchY := 165
+    firstResultX := 560, firstResultY := 300
+    mouseMovePlaylistX := 195
 
-    songLastX := 465, songLastY := 815
-    songsGap := 57
-    playlistDropX := 125, playlistDropY := 375
+    songLastX := 325, songLastY := 640
+    songsGap := 37
+    playlistDropX := 65, playlistDropY := 292
+    descriptionX := 666, descriptionY := 415
+    savePlaylistX := 800, savePlaylistY := 504
+    playPlaylistY := 400
 
+    newTabX := 301, newTabY := 21
     googleSearchX := 161, googleSearchY := 63
-    imagesTabX := 390, imagesTabY := 251
+    imagesTabX := 340, imagesTabY := 251
+    firstImageX := 130, firstImageY := 455
+    imageClickX := 1080, imageClickY := 421
+    saveImageX := -15, saveImageY := 159
 
-    emptyClickX := 1250, emptyClickY := 270
+    emptyClickX := 1050, emptyClickY := 195
+    downloadFirstImageX := 240, downloadFirstImageY := 165
 
     Loop 10 {
         i := A_Index - 1
@@ -35,18 +43,24 @@ F2:: {
 
         ; --- Chrome ventana i ---
         Click chromeX + (i * chromeGap), chromeY
-        Sleep 300
-
-        ; --- clic en Musica si sale ---
-        Click songLastX + 65, playlistDropY - 140
         Sleep 1500
 
-        ; --- Reproducir la primera lista en inicio ---
-        MouseMove songLastX + 100, playlistDropY + 85
-        Sleep 200
-        Click "Down"
-        Click "Up"
-        Sleep 1000
+        if (true) {
+            ; --- clic en Musica si sale ---
+            Click songLastX + 65, playlistDropY - 90
+            Sleep 1500 ; 325  640
+            ; --- Reproducir la primera lista en inicio ---
+            MouseMove songLastX + 90, playlistDropY + 75
+            Sleep 200
+            Click "Down"
+            Click "Up"
+            Sleep 1000
+        } else {
+            ; --- recargar pagina primero ---
+            Send "^r"
+            Sleep 7000
+        }
+
 
         ; --- Buscar en Spotify ---
         Click spotifySearchX, spotifySearchY
@@ -59,27 +73,27 @@ F2:: {
         ; --- Primer resultado y agregar a playlist ---
         Click firstResultX, firstResultY, "Right"
         Sleep 300
-        Click firstResultX + 25, firstResultY + 35
+        Click firstResultX + 15, firstResultY + 23
         Sleep 300
-        MouseMove firstResultX + 25 + mouseMovePlaylistX, firstResultY + 35
+        MouseMove firstResultX + 15 + mouseMovePlaylistX, firstResultY + 23
         Sleep 200
-        Click firstResultX + 25 + mouseMovePlaylistX, firstResultY + 35 + 40
+        Click firstResultX + 15 + mouseMovePlaylistX, firstResultY + 23 + 27
         Sleep 500
 
         ; --- Clic en artista ---
         Click firstResultX, firstResultY, "Right"
         Sleep 300
-        Click firstResultX + 25, firstResultY + 35 + 155
+        Click firstResultX + 15, firstResultY + 23 + 107
         Sleep 300
-        Click firstResultX + 25 + mouseMovePlaylistX, firstResultY + 35 + 155
+        Click firstResultX + 15 + mouseMovePlaylistX, firstResultY + 23 + 155
         Sleep 3500
 
         ; --- clic en albums, album de artista ---
         Send "{PgDn}"
         Sleep 1000
-        Click 650, 516
+        Click 455, 490
         Sleep 1000
-        Click songLastX + 90, 610
+        Click songLastX, songLastY - 60
         Sleep 4000
 
         ; --- Mover últimas 2 canciones a playlist ---
@@ -147,22 +161,22 @@ F2:: {
         Sleep 1000
 
         ; --- ordenar canciones intercaladas (dos movimientos) ---
-        MouseMove 532, 880
+        MouseMove songLastX, songLastY
         Sleep 200
         Click "Down"
         Sleep 200
-        MouseMove 532, 700, 50
+        MouseMove songLastX, songLastY - 5 - songsGap * 3, 50
         Sleep 200
         Click "Down"
         Sleep 200
         Click "Up"
         Sleep 1000
 
-        MouseMove 532, 880
+        MouseMove songLastX, songLastY
         Sleep 200
         Click "Down"
         Sleep 200
-        MouseMove 532, 812, 50
+        MouseMove songLastX, songLastY - 5 - songsGap * 1, 50
         Sleep 200
         Click "Down"
         Sleep 200
@@ -170,7 +184,7 @@ F2:: {
         Sleep 500
 
         ; --- abrir nueva pestaña y buscar ---
-        Click 292, 19
+        Click newTabX, newTabY
         Sleep 300
         Click googleSearchX, googleSearchY
         Sleep 300
@@ -184,13 +198,13 @@ F2:: {
         ; --- click en imágenes y en 1ra imagen ---
         Click imagesTabX, imagesTabY
         Sleep 7000
-        Click 148, 455
+        Click firstImageX, firstImageY
         Sleep 2000
 
         ; --- guardar imagen como ---
-        Click 1445, 500, "Right"
+        Click imageClickX, imageClickY, "Right"
         Sleep 300
-        Click 1416, 803
+        Click imageClickX + saveImageX, imageClickY + saveImageY
         Sleep 1500
 
         ; --- nombre dinámico de archivo ---
@@ -211,11 +225,11 @@ F2:: {
         Sleep 5000
 
         ; --- copiar letra ---
-        MouseMove 230, 572
+        MouseMove googleSearchX + 22, firstImageY + 15
         Sleep 200
         Click "Down"
         Sleep 200
-        MouseMove 553, 698, 50
+        MouseMove googleSearchX + 22 + 347, firstImageY + 15 + 220, 50
         Sleep 200
         Click "Up"
         Sleep 300
@@ -249,15 +263,15 @@ F2:: {
         Sleep 300
 
         ; --- pegar en descripción ---
-        Click 816, 566
+        Click descriptionX, descriptionY
         Sleep 200
         Send "^v"
         Sleep 300
 
         ; --- guardar y reproducir playlist ---
-        Click 1011, 695
+        Click savePlaylistX, savePlaylistY
         Sleep 3000
-        Click 452, 530
+        Click songLastX, playPlaylistY
         Sleep 200
 
         ; --- clic en nombre de playlist ---
@@ -265,15 +279,15 @@ F2:: {
         Sleep 1000
 
         ; --- cambiar imagen de portada ---
-        Click 690, 541
+        Click descriptionX - 60, descriptionY
         Sleep 2000
 
         ; --- seleccionar imagen más reciente ---
-        Click 231, 202
+        Click downloadFirstImageX, downloadFirstImageY
         Sleep 200
         Send "{Enter}"
-        ; --- guardara ---
-        Click 1011, 700
+        ; --- guardarla ---
+        Click savePlaylistX, savePlaylistY
         Sleep 200
     }
 }
