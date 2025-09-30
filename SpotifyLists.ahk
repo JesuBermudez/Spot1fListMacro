@@ -15,7 +15,7 @@ F2:: {
     mouseMovePlaylistX := 325
     playlistX := 1030, playlistY := 450
 
-    songLastX := 535, songLastY := 820
+    songLastX := 465, songLastY := 815
     songsGap := 57
     playlistDropX := 125, playlistDropY := 375
 
@@ -25,7 +25,7 @@ F2:: {
     emptyClickX := 1250, emptyClickY := 270
 
     Loop 10 {
-        i := A_Index
+        i := A_Index - 1
 
         ; --- Visual Studio: copiar línea ---
         Click vsX, vsY
@@ -37,10 +37,13 @@ F2:: {
 
         ; --- Chrome ventana i ---
         Click chromeX + (i * chromeGap), chromeY
-        Sleep 500
+        Sleep 300
 
         ; --- Reproducir la primera lista en inicio ---
-        Click songLastX + 30, playlistY + 10
+        MouseMove songLastX + 100, playlistY + 10
+        Sleep 200
+        Click "Down"
+        Click "Up"
         Sleep 1000
 
         ; --- Buscar en Spotify ---
@@ -73,9 +76,9 @@ F2:: {
         Send "{PgDn}"
         Sleep 1000
         Click 650, 516
-        Sleep 500
-        Click songLastX + 20, 610
-        Sleep 3500
+        Sleep 1000
+        Click songLastX + 90, 610
+        Sleep 4000
 
         ; --- Mover últimas 2 canciones a playlist ---
         Loop 2 {
@@ -137,7 +140,7 @@ F2:: {
 
         ; --- abrir playlist ---
         Click playlistDropX, playlistDropY
-        Sleep 1500
+        Sleep 3500
         Click emptyClickX, emptyClickY
         Sleep 1000
 
