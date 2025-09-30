@@ -1,4 +1,3 @@
-```markdown
 # Spotify & YouTube Charts Extractor
 
 Este proyecto permite extraer listas de canciones con artistas desde los JSON que usan las páginas de:
@@ -121,7 +120,6 @@ Put On - Jeezy, Kanye West
 Golden - HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast
 back to friends - sombr
 ...
-```
 ```
 
 Este formato usa bloques de código para diferenciar segmentos de código, comandos, y estructura. Los títulos usan el símbolo `#` para encabezados. Así los símbolos se mantienen legibles y es fácil copiar todo sin que el frontend lo interprete mal.
