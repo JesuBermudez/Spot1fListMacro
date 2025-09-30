@@ -2,25 +2,25 @@
 ; Presiona F2 para ejecutar la secuencia
 F2:: {
     ; --- Configuración ---
-    vsX := 165, vsY := 1035
-    vsLineX := 260, vsLineY := 100
+    vsX := 109, vsY := 1053
+    vsLineX := 39, vsLineY := 100
     vsLinesGap := 20
 
-    chromeX := 203, chromeY := 1035
-    chromeGap := 37
+    chromeX := 150, chromeY := 1057
+    chromeGap := 50
 
-    spotifySearchX := 720, spotifySearchY := 171
-    firstResultX := 650, firstResultY := 375
+    spotifySearchX := 934, spotifySearchY := 120
+    firstResultX := 659, firstResultY := 353
     mouseMovePlaylistX := 325
 
-    songLastX := 465, songLastY := 815
-    songsGap := 57
-    playlistDropX := 125, playlistDropY := 375
+    songLastX := 484, songLastY := 900
+    songsGap := 55
+    playlistDropX := 164, playlistDropY := 319
 
-    googleSearchX := 161, googleSearchY := 63
-    imagesTabX := 390, imagesTabY := 251
+    googleSearchX := 190, googleSearchY := 62
+    imagesTabX := 386, imagesTabY := 194
 
-    emptyClickX := 1250, emptyClickY := 270
+    emptyClickX := 1460, emptyClickY := 162
 
     Loop 10 {
         i := A_Index - 1
