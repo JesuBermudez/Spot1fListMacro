@@ -1,6 +1,11 @@
 import json
+import os
 
-with open(r"C:\Users\jesma\Documentos\AutoHotkey\charts.json", "r", encoding="utf-8") as f:
+base_dir = os.path.dirname(os.path.abspath(__file__))
+json_path = os.path.join(base_dir, "..", "chartsJson", "chartsYt.json")
+output_file = os.path.join(base_dir, "..", "outputs", "salidaChartYt.txt")
+
+with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 track_views = data["contents"]["sectionListRenderer"]["contents"][0] \
@@ -15,5 +20,5 @@ for track in track_views:
     rows.append(combined)
 
 # Guardar en un TXT, cada fila en una línea
-with open("salida.txt", "w", encoding="utf-8") as f:
+with open(output_file, "w", encoding="utf-8") as f:
     f.write("\n".join(rows))

@@ -1,6 +1,6 @@
 {
   "responseContext": {
-    "visitorData": "CgtLRkxmLXNXbnR4dyjV1erGBjIKCgJDTxIEGgAgTw%3D%3D"
+    "visitorData": "CgtfWXUtaDM5MEpiOCiUgfHGBjIKCgJDTxIEGgAgWw%3D%3D"
   },
   "contents": {
     "sectionListRenderer": {
@@ -18,18 +18,6 @@
                   }
                 },
                 "availableChartsInfo": [
-                  {
-                    "chartType": "CHART_TYPE_VIDEOS",
-                    "chartPeriodType": "CHART_PERIOD_TYPE_DAILY",
-                    "earliestEndDate": "2023-11-06",
-                    "latestEndDate": "2025-09-28"
-                  },
-                  {
-                    "chartType": "CHART_TYPE_VIDEOS",
-                    "chartPeriodType": "CHART_PERIOD_TYPE_WEEKLY",
-                    "earliestEndDate": "2018-05-03",
-                    "latestEndDate": "2025-09-25"
-                  },
                   {
                     "chartType": "CHART_TYPE_TRACKS",
                     "chartPeriodType": "CHART_PERIOD_TYPE_WEEKLY",
@@ -52,7 +40,19 @@
                     "chartType": "CHART_TYPE_SHORTS_TRACKS_BY_USAGE",
                     "chartPeriodType": "CHART_PERIOD_TYPE_DAILY",
                     "earliestEndDate": "2023-11-06",
-                    "latestEndDate": "2025-09-28"
+                    "latestEndDate": "2025-09-29"
+                  },
+                  {
+                    "chartType": "CHART_TYPE_VIDEOS",
+                    "chartPeriodType": "CHART_PERIOD_TYPE_WEEKLY",
+                    "earliestEndDate": "2018-05-03",
+                    "latestEndDate": "2025-09-25"
+                  },
+                  {
+                    "chartType": "CHART_TYPE_VIDEOS",
+                    "chartPeriodType": "CHART_PERIOD_TYPE_DAILY",
+                    "earliestEndDate": "2023-11-06",
+                    "latestEndDate": "2025-09-29"
                   },
                   {
                     "chartType": "CHART_TYPE_TRENDING_VIDEOS"
@@ -2416,7 +2416,7 @@
                       },
                       "artists": [
                         {
-                          "kgMid": "/g/11mf04n1cd",
+                          "kgMid": "/g/11fl8pf_vp",
                           "name": "Nilfruits"
                         }
                       ],
@@ -2809,7 +2809,7 @@
                       "thumbnail": {
                         "thumbnails": [
                           {
-                            "url": "https://lh3.googleusercontent.com/zu8YHOu15TMv-DudAnPZN2hkN1trIuc6BWNS_KfCABdoniHGkg01qfIIJXr-NkAbzN9QPNBAPZforfS31w=w180-h180-l90-rj",
+                            "url": "https://lh3.googleusercontent.com/-DKAccVr-buDt5j_mPY7gCcvvhR_1y5VIVk16uJb5TGflYaAbtGS4BOB7hyUivvRjUJgCWV4KujzKr2a=w180-h180-l90-rj",
                             "width": 180,
                             "height": 180
                           }
@@ -2827,14 +2827,14 @@
                         }
                       ],
                       "isVisible": true,
-                      "atvExternalVideoId": "ziLnAK4mIEY",
+                      "atvExternalVideoId": "cbgkxblip80",
                       "releaseDate": {
                         "year": 2025,
                         "month": 9,
                         "day": 17
                       },
-                      "songwriters": ["George Mgoqi", "George Mgoqi"],
-                      "songProducers": ["Blck Narphy"],
+                      "songwriters": ["Ganal Valshour"],
+                      "songProducers": ["Condy R.Ecord"],
                       "shareCardUrl": "/image/analytics/charts?r=CLgIEIAPIuoBCAISngEKDEFUQU1JIChMaXZlKRJ-aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL1QxUTZaMzRzcGxRM3ZfdDluU1BTbzgyMFo1QjlRUFF2LU56UEhFYm5FalZwZkJsYWxOSGx1N0hhcVQzMXNLeFQ1dmR5OGNxX19NTGhiNkZlPXc5MDAtaDkwMC1wGgI3MCIITnVtYmVyX2kqABovChBXZWVrbHkgVG9wIFNvbmdzEgVKYXBhbhoSU2VwdGVtYmVyIDI1LCAyMDI1OAIiEgoHI0IwQjBCMBIHIzAwMDAwMCgB"
                     },
                     {
@@ -3817,16 +3817,6 @@
                       "id": "G:XxCU9I6lMV8",
                       "name": "まぼろし",
                       "viewCount": "494628",
-                      "thumbnail": {
-                        "thumbnails": [
-                          {
-                            "url": "https://lh3.googleusercontent.com/KW-NqgQYsOd1Gb-ipeN-AIzJ5DbYtj9x6tqlA9Sr2o86mvz3ZRxvYsP7pZzWHjinorjxTKnEjE97Gdw=w180-h180-l90-rj",
-                            "width": 180,
-                            "height": 180
-                          }
-                        ]
-                      },
-                      "encryptedVideoId": "Le_RKh-a7V4",
                       "chartEntryMetadata": {
                         "currentPosition": 96,
                         "periodsOnChart": 1
@@ -3838,13 +3828,6 @@
                         }
                       ],
                       "isVisible": true,
-                      "atvExternalVideoId": "p93I8LyOsDQ",
-                      "releaseDate": {
-                        "year": 2025,
-                        "month": 7,
-                        "day": 10
-                      },
-                      "songwriters": ["kanemaru", "kanemaru"],
                       "shareCardUrl": "/image/analytics/charts?r=CLgIEIAPIu8BCAISowEKDOOBvuOBvOOCjeOBlxJ-aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL3J6N2FLRHkzNUtmV0JKcTk4elB0TThnOUVjN212Nl8zLThfRlhLSTlEbHI5YzlJRW41VGpRQWY2YjdVcDBkTFZCM1BmMFpwNFFjOEVrWlF0PXc5MDAtaDkwMC1wGgI5NiINdGhlIHNoZXMgZ29uZSoAGi8KEFdlZWtseSBUb3AgU29uZ3MSBUphcGFuGhJTZXB0ZW1iZXIgMjUsIDIwMjU4AiISCgcjQjBCMEIwEgcjMDAwMDAwKAE"
                     },
                     {
@@ -4039,8 +4022,8 @@
           }
         }
       ],
-      "trackingParams": "CAEQui8iEwiav7fJqf6PAxX0KrMAHXl_FsY="
+      "trackingParams": "CAEQui8iEwjrooLDrIGQAxWCCE8IHX99PLg="
     }
   },
-  "trackingParams": "CAAQhGciEwiav7fJqf6PAxX0KrMAHXl_FsY="
+  "trackingParams": "CAAQhGciEwjrooLDrIGQAxWCCE8IHX99PLg="
 }
